@@ -202,6 +202,4 @@ TOP画面
 Figma：https://www.figma.com/design/2peX9P7VHa5GXKUd99bhMA/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&t=78oulmWBO12W5GOh-1
 
 ### ER図
-[![Image from Gyazo](https://i.gyazo.com/52ec738d0851006c0540dc24ad9d2bab.png)](https://gyazo.com/52ec738d0851006c0540dc24ad9d2bab)
-
-
+[![Image from Gyazo](https://i.gyazo.com/6c0b17fd24ba2c702d5aa2c0de1aa244.png)](https://gyazo.com/6c0b17fd24ba2c702d5aa2c0de1aa244)
