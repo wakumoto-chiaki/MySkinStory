@@ -104,5 +104,4 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
   config.hosts << "myskinstory.onrender.com"
-
 end
