@@ -1,0 +1,76 @@
+<div class="min-h-screen flex items-center justify-center px-6 bg-white">
+  <div class="w-full max-w-md">
+
+
+
+
+  <div class="text-center mb-10">
+    <h1 class="text-2xl font-light tracking-wide text-rose-300">
+      My Skin Story
+    </h1>
+
+    <h2 class="mt-6 text-3xl font-extralight text-gray-700">
+      アカウントを作成
+    </h2>
+
+    <p class="mt-3 text-gray-500 leading-7">
+      あなただけの肌変化を記録しよう
+    </p>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="mb-6">
+      <%= f.label :name, "お名前", class: "block text-sm font-medium text-gray-600 mb-2" %>
+
+      <%= f.text_field :name,
+        autofocus: true,
+        class: "w-full rounded-xl border border-gray-200 px-4 py-3 focus:border-rose-300 focus:ring-rose-300" %>
+    </div>
+    
+    
+    <div class="mb-6">
+      <%= f.label :email, "メールアドレス",
+          class: "block text-sm font-medium text-gray-600 mb-2" %>
+
+      <%= f.email_field :email,
+          autocomplete: "email",
+          class: "w-full rounded-xl border border-gray-200 px-4 py-3 focus:border-rose-300 focus:ring-rose-300" %>
+    </div>
+
+    <div class="mb-6">
+      <%= f.label :password, "パスワード",
+          class: "block text-sm font-medium text-gray-600 mb-2" %>
+
+      <% if @minimum_password_length %>
+        <p class="text-xs text-gray-400 mb-2">
+          <%= @minimum_password_length %>文字以上で入力してください
+        </p>
+      <% end %>
+
+      <%= f.password_field :password,
+          autocomplete: "new-password",
+          class: "w-full rounded-xl border border-gray-200 px-4 py-3 focus:border-rose-300 focus:ring-rose-300" %>
+    </div>
+
+
+    <div class="mb-8">
+      <%= f.label :password_confirmation, "パスワード（確認）",
+          class: "block text-sm font-medium text-gray-600 mb-2" %>
+
+      <%= f.password_field :password_confirmation,
+          autocomplete: "new-password",
+          class: "w-full rounded-xl border border-gray-200 px-4 py-3 focus:border-rose-300 focus:ring-rose-300" %>
+    </div>
+    
+    <div class="mt-8">
+      <%= f.submit "アカウントを作成",
+          class: "w-full bg-rose-300 hover:bg-rose-400 text-white py-3 rounded-full transition duration-300 cursor-pointer" %>
+    </div>
+
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+  </div>
+</div>
+

@@ -1,0 +1,16 @@
+<% if controller_name != 'sessions' %>
+  <p class="mt-6 text-center text-sm text-gray-500">
+    すでにアカウントをお持ちですか？
+    <%= link_to "ログイン",
+        new_session_path(resource_name),
+        class: "text-rose-300 hover:text-rose-400 transition duration-300" %>
+  </p>
+<% end %>
+
+<% if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <p class="mt-4 text-center text-sm">
+    <%= link_to "パスワードを忘れた方はこちら",
+        new_password_path(resource_name),
+        class: "text-gray-400 hover:text-rose-300 transition duration-300" %>
+  </p>
+<% end %>
