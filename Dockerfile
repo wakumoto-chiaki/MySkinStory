@@ -15,3 +15,4 @@ RUN bundle install
 
 COPY . .
 
+CMD ["bash", "-c", "bin/rails server -b 0.0.0.0"]
