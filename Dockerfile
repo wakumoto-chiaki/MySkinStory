@@ -15,4 +15,5 @@ RUN bundle install
 
 COPY . .
 
-CMD ["bash", "-c", "bin/rails server -b 0.0.0.0"]
+CMD ["bash", "-c", "RAILS_ENV=production bin/rails server -b 0.0.0.0"]
+
