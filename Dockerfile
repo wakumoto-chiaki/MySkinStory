@@ -15,6 +15,6 @@ RUN bundle install
 
 COPY . .
 
-RUN RAILS_ENV=production bundle exec rails assets:precompile
+RUN SECRET_KEY_BASE_DUMMY=1 RAILS_ENV=production bundle exec rails assets:precompile
 
-CMD ["bash", "-c", "RAILS_ENV=production bin/rails server -b 0.0.0.0"]
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
