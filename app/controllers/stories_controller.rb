@@ -1,6 +1,10 @@
 class StoriesController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @stories = current_user.stories
+  end
+
   def new
     @story = Story.new
   end
@@ -9,7 +13,7 @@ class StoriesController < ApplicationController
     @story = current_user.stories.build(story_params)
 
     if @story.save
-      redirect_to @story, notice: "ストーリーを作成しました。"
+      redirect_to stories_path, notice: "ストーリーを作成しました。"
     else
       render :new, status: :unprocessable_entity
     end
