@@ -1,0 +1,63 @@
+<div class="min-h-screen flex items-center justify-center px-6">
+
+  <div class="w-full max-w-md">
+
+    <h2 class="text-3xl font-extralight tracking-wide text-gray-700 text-center">
+      新しいストーリー
+    </h2>
+
+    <p class="mt-4 text-center text-sm text-gray-400">
+      肌変化のストーリーを作成しましょう
+    </p>
+
+    <%= form_with model: @story, local: true, class: "mt-10" do |f| %>
+
+      <% if @story.errors.any? %>
+        <div class="mb-6 rounded-xl bg-red-50 border border-red-200 p-4">
+          <p class="text-sm font-medium text-red-600">
+            <%= pluralize(@story.errors.count, "error") %> 件のエラーがあります
+          </p>
+
+          <ul class="mt-2 text-sm text-red-500 list-disc list-inside">
+            <% @story.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="mt-6">
+        <%= f.label :title, "タイトル",
+            class: "block text-sm text-gray-500 mb-2" %>
+
+        <%= f.text_field :title,
+            class: "w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-rose-200" %>
+      </div>
+
+      <div class="mt-6">
+        <%= f.label :description, "説明",
+            class: "block text-sm text-gray-500 mb-2" %>
+
+        <%= f.text_area :description,
+            rows: 4,
+            class: "w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-rose-200" %>
+      </div>
+
+      <div class="mt-6">
+        <%= f.label :started_on, "開始日",
+            class: "block text-sm text-gray-500 mb-2" %>
+
+        <%= f.date_field :started_on,
+            class: "w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-rose-200" %>
+      </div>
+
+      <div class="mt-10">
+        <%= f.submit "ストーリーを作成する",
+            class: "w-full bg-rose-300 hover:bg-rose-400 text-white py-3 rounded-full transition duration-300" %>
+      </div>
+
+    <% end %>
+
+  </div>
+
+</div>
