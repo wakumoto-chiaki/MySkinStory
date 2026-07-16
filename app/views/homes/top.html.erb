@@ -3,15 +3,16 @@
     My Skin Story
   </h1>
 
-  <a href="#"
-     class="flex items-center gap-2 text-sm text-gray-500 hover:text-rose-300 transition duration-300">
+  <%= link_to new_user_session_path,
+      class: "flex items-center gap-2 text-sm text-gray-500 hover:text-rose-300 transition duration-300" do %>
 
     <span class="text-lg">
       ♙
     </span>
 
     Login
-  </a>
+
+  <% end %>
 </header>
 
 
@@ -36,8 +37,8 @@
       </p>
 
 
-      <a href="#"
-         class="inline-flex items-center justify-center gap-4 mt-10 bg-rose-300 hover:bg-rose-400 text-white px-10 py-4 rounded-full transition duration-300">
+      <%= link_to new_user_registration_path,
+          class: "inline-flex items-center justify-center gap-4 mt-10 bg-rose-300 hover:bg-rose-400 text-white px-10 py-4 rounded-full transition duration-300" do %>
 
         新規登録
 
@@ -45,7 +46,7 @@
           →
         </span>
 
-      </a>
+      <% end %>
 
     </div>
 
