@@ -26,4 +26,13 @@
       edit_story_path(@story),
       class: "inline-block mt-8 bg-rose-300 hover:bg-rose-400 text-white px-6 py-3 rounded-full transition duration-300" %>
 
+  <%= button_to "削除する",
+      story_path(@story),
+      method: :delete,
+      form_class: "inline-block",
+      class: "bg-gray-300 hover:bg-gray-400 text-white px-6 py-3 rounded-full transition duration-300",
+      data: {
+        turbo_confirm: "本当にこのストーリーを削除しますか？"
+      } %>
+       
 </div>
