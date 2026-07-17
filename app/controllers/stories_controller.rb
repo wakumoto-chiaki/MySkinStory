@@ -9,6 +9,10 @@ class StoriesController < ApplicationController
     @story = Story.new
   end
 
+  def show
+    @story = current_user.stories.find(params[:id])
+  end
+
   def create
     @story = current_user.stories.build(story_params)
 
