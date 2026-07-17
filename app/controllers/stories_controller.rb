@@ -13,6 +13,10 @@ class StoriesController < ApplicationController
     @story = current_user.stories.find(params[:id])
   end
 
+  def edit
+    @story = current_user.stories.find(params[:id])
+  end
+
   def create
     @story = current_user.stories.build(story_params)
 
@@ -20,6 +24,16 @@ class StoriesController < ApplicationController
       redirect_to stories_path, notice: "ストーリーを作成しました。"
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @story = current_user.stories.find(params[:id])
+
+    if @story.update(story_params)
+      redirect_to story_path(@story), notice: "ストーリーを更新しました。"
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
