@@ -18,9 +18,35 @@
     経過記録
   </h2>
 
-  <p class="mt-6 text-gray-400">
-    まだ経過記録はありません
-  </p>
+  <%= link_to "＋ 経過記録を追加",
+      new_story_record_path(@story),
+      class: "inline-block mt-6 bg-rose-300 hover:bg-rose-400 text-white px-6 py-3 rounded-full transition duration-300" %>
+
+  <% if @story.records.any? %>
+
+    <% @story.records.each do |record| %>
+
+      <div class="mt-6 border border-gray-200 rounded-2xl p-6">
+
+        <p class="text-sm text-gray-400">
+          <%= record.recorded_on %>
+        </p>
+
+        <p class="mt-3 text-gray-600 leading-7">
+          <%= record.memo %>
+        </p>
+
+      </div>
+
+    <% end %>
+
+  <% else %>
+
+    <p class="mt-6 text-gray-400">
+      まだ経過記録はありません
+    </p>
+
+  <% end %>
 
   <%= link_to "編集する",
       edit_story_path(@story),
