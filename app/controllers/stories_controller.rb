@@ -37,6 +37,13 @@ class StoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @story = current_user.stories.find(params[:id])
+    @story.destroy
+
+    redirect_to stories_path, notice: "ストーリーを削除しました。"
+  end
+
   private
 
   def story_params
