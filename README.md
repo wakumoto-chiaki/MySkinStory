@@ -205,3 +205,15 @@ Figma：https://www.figma.com/design/2peX9P7VHa5GXKUd99bhMA/%E5%8D%92%E6%A5%AD%E
 [![Image from Gyazo](https://i.gyazo.com/52ec738d0851006c0540dc24ad9d2bab.png)](https://gyazo.com/52ec738d0851006c0540dc24ad9d2bab)
 
 
+### CI
+
+GitHub Actions を利用して以下のチェックを自動実行しています。
+
+- RuboCop
+- Brakeman
+- importmap audit
+- Rails Test
+
+main ブランチへの Push および Pull Request 作成時に実行されます。
+
+
