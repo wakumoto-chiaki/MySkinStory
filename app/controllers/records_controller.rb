@@ -23,6 +23,6 @@ class RecordsController < ApplicationController
   end
 
   def record_params
-    params.require(:record).permit(:memo, :recorded_on)
+    params.require(:record).permit(:memo, :recorded_on, :image)
   end
 end
