@@ -1,0 +1,662 @@
+window.SIMPLECOV_DATA = {
+  "$schema": "https://raw.githubusercontent.com/simplecov-ruby/simplecov/main/schemas/coverage-v1.0.schema.json",
+  "meta": {
+    "schema_version": "1.0",
+    "simplecov_version": "1.0.2",
+    "command_name": "Integration Tests, Minitest",
+    "project_name": "Myapp",
+    "timestamp": "2026-07-22T13:42:46.186+09:00",
+    "root": "/myapp",
+    "commit": "e0b3f75eec8449c635f54495d4fbcdd8591c3581",
+    "primary_coverage": "line",
+    "line_coverage": true,
+    "branch_coverage": false,
+    "method_coverage": false
+  },
+  "total": {
+    "lines": {
+      "covered": 43,
+      "missed": 51,
+      "omitted": 84,
+      "total": 94,
+      "percent": 45.744680851063826,
+      "strength": 0.8297872340425532
+    }
+  },
+  "coverage": {
+    "app/channels/application_cable/channel.rb": {
+      "source": [
+        "module ApplicationCable",
+        "  class Channel < ActionCable::Channel::Base",
+        "  end",
+        "end"
+      ],
+      "lines": [
+        0,
+        0,
+        null,
+        null
+      ],
+      "lines_covered_percent": 0.0,
+      "covered_lines": 0,
+      "missed_lines": 2,
+      "omitted_lines": 2,
+      "total_lines": 2
+    },
+    "app/channels/application_cable/connection.rb": {
+      "source": [
+        "module ApplicationCable",
+        "  class Connection < ActionCable::Connection::Base",
+        "  end",
+        "end"
+      ],
+      "lines": [
+        0,
+        0,
+        null,
+        null
+      ],
+      "lines_covered_percent": 0.0,
+      "covered_lines": 0,
+      "missed_lines": 2,
+      "omitted_lines": 2,
+      "total_lines": 2
+    },
+    "app/controllers/application_controller.rb": {
+      "source": [
+        "class ApplicationController < ActionController::Base",
+        "  # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.",
+        "  allow_browser versions: :modern",
+        "",
+        "  before_action :configure_permitted_parameters, if: :devise_controller?",
+        "",
+        "  protected",
+        "",
+        "  def configure_permitted_parameters",
+        "    devise_parameter_sanitizer.permit(:sign_up, keys: [ :name ])",
+        "    devise_parameter_sanitizer.permit(:account_update, keys: [ :name ])",
+        "  end",
+        "end"
+      ],
+      "lines": [
+        2,
+        null,
+        2,
+        null,
+        2,
+        null,
+        2,
+        null,
+        2,
+        0,
+        0,
+        null,
+        null
+      ],
+      "lines_covered_percent": 71.42857142857143,
+      "covered_lines": 5,
+      "missed_lines": 2,
+      "omitted_lines": 6,
+      "total_lines": 7
+    },
+    "app/controllers/homes_controller.rb": {
+      "source": [
+        "class HomesController < ApplicationController",
+        "  def top",
+        "  end",
+        "end"
+      ],
+      "lines": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "lines_covered_percent": 100.0,
+      "covered_lines": 2,
+      "missed_lines": 0,
+      "omitted_lines": 2,
+      "total_lines": 2
+    },
+    "app/controllers/records_controller.rb": {
+      "source": [
+        "class RecordsController < ApplicationController",
+        "  before_action :authenticate_user!",
+        "  before_action :set_story",
+        "",
+        "  def new",
+        "    @record = @story.records.new",
+        "  end",
+        "",
+        "  def create",
+        "    @record = @story.records.build(record_params)",
+        "",
+        "    if @record.save",
+        "      redirect_to story_path(@story), notice: \"経過記録を投稿しました。\"",
+        "    else",
+        "      render :new, status: :unprocessable_entity",
+        "    end",
+        "  end",
+        "",
+        "  def edit",
+        "    @record = @story.records.find(params[:id])",
+        "  end",
+        "",
+        "  def update",
+        "    @record = @story.records.find(params[:id])",
+        "",
+        "    if @record.update(record_params)",
+        "      redirect_to story_path(@story), notice: \"経過記録を更新しました。\"",
+        "    else",
+        "      render :edit, status: :unprocessable_entity",
+        "    end",
+        "  end",
+        "",
+        "  def destroy",
+        "    @record = @story.records.find(params[:id])",
+        "",
+        "    @record.destroy",
+        "",
+        "    redirect_to story_path(@story), notice: \"経過記録を削除しました。\"",
+        "  end",
+        "",
+        "  private",
+        "",
+        "  def set_story",
+        "    @story = current_user.stories.find(params[:story_id])",
+        "  end",
+        "",
+        "  def record_params",
+        "    params.require(:record).permit(:memo, :recorded_on, :image)",
+        "  end",
+        "end"
+      ],
+      "lines": [
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        null,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        null,
+        null
+      ],
+      "lines_covered_percent": 0.0,
+      "covered_lines": 0,
+      "missed_lines": 26,
+      "omitted_lines": 24,
+      "total_lines": 26
+    },
+    "app/controllers/stories_controller.rb": {
+      "source": [
+        "class StoriesController < ApplicationController",
+        "  before_action :authenticate_user!",
+        "",
+        "  def index",
+        "    @stories = current_user.stories",
+        "  end",
+        "",
+        "  def new",
+        "    @story = Story.new",
+        "  end",
+        "",
+        "  def show",
+        "    @story = current_user.stories.find(params[:id])",
+        "",
+        "    @before_record = @story.records.order(:recorded_on).first",
+        "    @after_record  = @story.records.order(:recorded_on).last",
+        "  end",
+        "",
+        "  def edit",
+        "    @story = current_user.stories.find(params[:id])",
+        "  end",
+        "",
+        "  def create",
+        "    @story = current_user.stories.build(story_params)",
+        "",
+        "    if @story.save",
+        "      redirect_to stories_path, notice: \"ストーリーを作成しました。\"",
+        "    else",
+        "      render :new, status: :unprocessable_entity",
+        "    end",
+        "  end",
+        "",
+        "  def update",
+        "    @story = current_user.stories.find(params[:id])",
+        "",
+        "    if @story.update(story_params)",
+        "      redirect_to story_path(@story), notice: \"ストーリーを更新しました。\"",
+        "    else",
+        "      render :edit, status: :unprocessable_entity",
+        "    end",
+        "  end",
+        "",
+        "  def destroy",
+        "    @story = current_user.stories.find(params[:id])",
+        "    @story.destroy",
+        "",
+        "    redirect_to stories_path, notice: \"ストーリーを削除しました。\"",
+        "  end",
+        "",
+        "  private",
+        "",
+        "  def story_params",
+        "    params.require(:story).permit(:title, :description, :started_on)",
+        "  end",
+        "end"
+      ],
+      "lines": [
+        2,
+        2,
+        null,
+        2,
+        0,
+        null,
+        null,
+        2,
+        0,
+        null,
+        null,
+        2,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        2,
+        0,
+        null,
+        null,
+        2,
+        2,
+        null,
+        2,
+        2,
+        null,
+        0,
+        null,
+        null,
+        null,
+        2,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        2,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        2,
+        null,
+        2,
+        2,
+        null,
+        null
+      ],
+      "lines_covered_percent": 51.724137931034484,
+      "covered_lines": 15,
+      "missed_lines": 14,
+      "omitted_lines": 26,
+      "total_lines": 29
+    },
+    "app/helpers/application_helper.rb": {
+      "source": [
+        "module ApplicationHelper",
+        "end"
+      ],
+      "lines": [
+        2,
+        null
+      ],
+      "lines_covered_percent": 100.0,
+      "covered_lines": 1,
+      "missed_lines": 0,
+      "omitted_lines": 1,
+      "total_lines": 1
+    },
+    "app/helpers/homes_helper.rb": {
+      "source": [
+        "module HomesHelper",
+        "end"
+      ],
+      "lines": [
+        2,
+        null
+      ],
+      "lines_covered_percent": 100.0,
+      "covered_lines": 1,
+      "missed_lines": 0,
+      "omitted_lines": 1,
+      "total_lines": 1
+    },
+    "app/helpers/records_helper.rb": {
+      "source": [
+        "module RecordsHelper",
+        "end"
+      ],
+      "lines": [
+        2,
+        null
+      ],
+      "lines_covered_percent": 100.0,
+      "covered_lines": 1,
+      "missed_lines": 0,
+      "omitted_lines": 1,
+      "total_lines": 1
+    },
+    "app/helpers/stories_helper.rb": {
+      "source": [
+        "module StoriesHelper",
+        "end"
+      ],
+      "lines": [
+        2,
+        null
+      ],
+      "lines_covered_percent": 100.0,
+      "covered_lines": 1,
+      "missed_lines": 0,
+      "omitted_lines": 1,
+      "total_lines": 1
+    },
+    "app/jobs/application_job.rb": {
+      "source": [
+        "class ApplicationJob < ActiveJob::Base",
+        "  # Automatically retry jobs that encountered a deadlock",
+        "  # retry_on ActiveRecord::Deadlocked",
+        "",
+        "  # Most jobs are safe to ignore if the underlying records are no longer available",
+        "  # discard_on ActiveJob::DeserializationError",
+        "end"
+      ],
+      "lines": [
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "lines_covered_percent": 0.0,
+      "covered_lines": 0,
+      "missed_lines": 1,
+      "omitted_lines": 6,
+      "total_lines": 1
+    },
+    "app/mailers/application_mailer.rb": {
+      "source": [
+        "class ApplicationMailer < ActionMailer::Base",
+        "  default from: \"from@example.com\"",
+        "  layout \"mailer\"",
+        "end"
+      ],
+      "lines": [
+        0,
+        0,
+        0,
+        null
+      ],
+      "lines_covered_percent": 0.0,
+      "covered_lines": 0,
+      "missed_lines": 3,
+      "omitted_lines": 1,
+      "total_lines": 3
+    },
+    "app/models/application_record.rb": {
+      "source": [
+        "class ApplicationRecord < ActiveRecord::Base",
+        "  primary_abstract_class",
+        "end"
+      ],
+      "lines": [
+        1,
+        1,
+        null
+      ],
+      "lines_covered_percent": 100.0,
+      "covered_lines": 2,
+      "missed_lines": 0,
+      "omitted_lines": 1,
+      "total_lines": 2
+    },
+    "app/models/record.rb": {
+      "source": [
+        "class Record < ApplicationRecord",
+        "  belongs_to :story",
+        "",
+        "  has_one_attached :image",
+        "",
+        "  validates :memo, presence: true",
+        "  validates :recorded_on, presence: true",
+        "end"
+      ],
+      "lines": [
+        2,
+        2,
+        null,
+        2,
+        null,
+        2,
+        2,
+        null
+      ],
+      "lines_covered_percent": 100.0,
+      "covered_lines": 5,
+      "missed_lines": 0,
+      "omitted_lines": 3,
+      "total_lines": 5
+    },
+    "app/models/story.rb": {
+      "source": [
+        "class Story < ApplicationRecord",
+        "  belongs_to :user",
+        "  has_many :records, dependent: :destroy",
+        "",
+        "  validates :title, presence: true",
+        "  validates :started_on, presence: true",
+        "",
+        "  def elapsed_days",
+        "    (Date.current - started_on).to_i + 1",
+        "  end",
+        "end"
+      ],
+      "lines": [
+        2,
+        2,
+        2,
+        null,
+        2,
+        2,
+        null,
+        2,
+        0,
+        null,
+        null
+      ],
+      "lines_covered_percent": 85.71428571428571,
+      "covered_lines": 6,
+      "missed_lines": 1,
+      "omitted_lines": 4,
+      "total_lines": 7
+    },
+    "app/models/user.rb": {
+      "source": [
+        "class User < ApplicationRecord",
+        "  has_many :stories, dependent: :destroy",
+        "  devise :database_authenticatable, :registerable,",
+        "         :recoverable, :rememberable, :validatable",
+        "",
+        "  validates :name, presence: true, length: { maximum: 30 }",
+        "end"
+      ],
+      "lines": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "lines_covered_percent": 100.0,
+      "covered_lines": 4,
+      "missed_lines": 0,
+      "omitted_lines": 3,
+      "total_lines": 4
+    }
+  },
+  "groups": {
+    "Controllers": {
+      "lines": {
+        "covered": 22,
+        "missed": 42,
+        "omitted": 58,
+        "total": 64,
+        "percent": 34.375,
+        "strength": 0.65625
+      },
+      "files": [
+        "app/controllers/application_controller.rb",
+        "app/controllers/homes_controller.rb",
+        "app/controllers/records_controller.rb",
+        "app/controllers/stories_controller.rb"
+      ]
+    },
+    "Channels": {
+      "lines": {
+        "covered": 0,
+        "missed": 4,
+        "omitted": 4,
+        "total": 4,
+        "percent": 0.0,
+        "strength": 0.0
+      },
+      "files": [
+        "app/channels/application_cable/channel.rb",
+        "app/channels/application_cable/connection.rb"
+      ]
+    },
+    "Models": {
+      "lines": {
+        "covered": 17,
+        "missed": 1,
+        "omitted": 11,
+        "total": 18,
+        "percent": 94.44444444444444,
+        "strength": 1.5555555555555556
+      },
+      "files": [
+        "app/models/application_record.rb",
+        "app/models/record.rb",
+        "app/models/story.rb",
+        "app/models/user.rb"
+      ]
+    },
+    "Mailers": {
+      "lines": {
+        "covered": 0,
+        "missed": 3,
+        "omitted": 1,
+        "total": 3,
+        "percent": 0.0,
+        "strength": 0.0
+      },
+      "files": [
+        "app/mailers/application_mailer.rb"
+      ]
+    },
+    "Helpers": {
+      "lines": {
+        "covered": 4,
+        "missed": 0,
+        "omitted": 4,
+        "total": 4,
+        "percent": 100.0,
+        "strength": 2.0
+      },
+      "files": [
+        "app/helpers/application_helper.rb",
+        "app/helpers/homes_helper.rb",
+        "app/helpers/records_helper.rb",
+        "app/helpers/stories_helper.rb"
+      ]
+    },
+    "Jobs": {
+      "lines": {
+        "covered": 0,
+        "missed": 1,
+        "omitted": 6,
+        "total": 1,
+        "percent": 0.0,
+        "strength": 0.0
+      },
+      "files": [
+        "app/jobs/application_job.rb"
+      ]
+    },
+    "Libraries": {
+      "lines": {
+        "covered": 0,
+        "missed": 0,
+        "omitted": 0,
+        "total": 0,
+        "percent": 100.0,
+        "strength": 0.0
+      },
+      "files": []
+    }
+  },
+  "errors": {}
+};
