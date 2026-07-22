@@ -41,6 +41,13 @@
           <%= record.memo %>
         </p>
 
+        <div class="mt-4">
+          <%= link_to "編集",
+              edit_story_record_path(@story, record),
+              class: "text-sm text-rose-400 hover:text-rose-500 transition duration-300" %>
+        </div>
+
+
       </div>
 
     <% end %>

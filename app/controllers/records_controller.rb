@@ -16,6 +16,20 @@ class RecordsController < ApplicationController
     end
   end
 
+  def edit
+    @record = @story.records.find(params[:id])
+  end
+
+  def update
+    @record = @story.records.find(params[:id])
+
+    if @record.update(record_params)
+      redirect_to story_path(@story), notice: "経過記録を更新しました。"
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def set_story
