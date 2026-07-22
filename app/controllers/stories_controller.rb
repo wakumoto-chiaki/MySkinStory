@@ -11,6 +11,9 @@ class StoriesController < ApplicationController
 
   def show
     @story = current_user.stories.find(params[:id])
+
+    @before_record = @story.records.order(:recorded_on).first
+    @after_record  = @story.records.order(:recorded_on).last
   end
 
   def edit
