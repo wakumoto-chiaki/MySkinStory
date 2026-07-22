@@ -5,9 +5,9 @@
     "simplecov_version": "1.0.2",
     "command_name": "Minitest",
     "project_name": "Myapp",
-    "timestamp": "2026-07-22T18:16:21.386+09:00",
+    "timestamp": "2026-07-22T18:29:00.382+09:00",
     "root": "/myapp",
-    "commit": "5fc5b2fd56fce5ae6f015369d46140f8bfbf048d",
+    "commit": "83291a14c4f041f25cc8cb0e20acfc76a6a1ab16",
     "primary_coverage": "line",
     "line_coverage": true,
     "branch_coverage": false,
@@ -15,12 +15,12 @@
   },
   "total": {
     "lines": {
-      "covered": 37,
-      "missed": 57,
-      "omitted": 84,
-      "total": 94,
-      "percent": 39.361702127659576,
-      "strength": 0.39361702127659576
+      "covered": 39,
+      "missed": 59,
+      "omitted": 88,
+      "total": 98,
+      "percent": 39.795918367346935,
+      "strength": 0.3979591836734694
     }
   },
   "coverage": {
@@ -245,8 +245,8 @@
         "  def show",
         "    @story = current_user.stories.includes(:records).find(params[:id])",
         "",
-        "    @before_record = @story.records.order(:recorded_on).first",
-        "    @after_record  = @story.records.order(:recorded_on).last",
+        "    @before_record = @story.before_record",
+        "    @after_record = @story.after_record",
         "  end",
         "",
         "  def edit",
@@ -510,6 +510,14 @@
         "  def elapsed_days",
         "    (Date.current - started_on).to_i + 1",
         "  end",
+        "",
+        "  def before_record",
+        "    records.order(:recorded_on).first",
+        "  end",
+        "",
+        "  def after_record",
+        "    records.order(:recorded_on).last",
+        "  end",
         "end"
       ],
       "lines": [
@@ -523,13 +531,21 @@
         1,
         0,
         null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
         null
       ],
-      "lines_covered_percent": 85.71428571428571,
-      "covered_lines": 6,
-      "missed_lines": 1,
-      "omitted_lines": 4,
-      "total_lines": 7
+      "lines_covered_percent": 72.72727272727273,
+      "covered_lines": 8,
+      "missed_lines": 3,
+      "omitted_lines": 8,
+      "total_lines": 11
     },
     "app/models/user.rb": {
       "source": [
@@ -590,12 +606,12 @@
     },
     "Models": {
       "lines": {
-        "covered": 11,
-        "missed": 7,
-        "omitted": 11,
-        "total": 18,
-        "percent": 61.111111111111114,
-        "strength": 0.6111111111111112
+        "covered": 13,
+        "missed": 9,
+        "omitted": 15,
+        "total": 22,
+        "percent": 59.09090909090909,
+        "strength": 0.5909090909090909
       },
       "files": [
         "app/models/application_record.rb",
