@@ -45,6 +45,17 @@
           <%= link_to "編集",
               edit_story_record_path(@story, record),
               class: "text-sm text-rose-400 hover:text-rose-500 transition duration-300" %>
+        
+          <%= button_to "削除",
+              story_record_path(@story, record),
+              method: :delete,
+              form_class: "inline-block ml-4",
+              class: "text-sm text-gray-400 hover:text-red-500 transition duration-300",
+              data: {
+                turbo_confirm: "この経過記録を削除しますか？"
+             } %>
+        
+        
         </div>
 
 
