@@ -30,6 +30,14 @@ class RecordsController < ApplicationController
     end
   end
 
+  def destroy
+    @record = @story.records.find(params[:id])
+
+    @record.destroy
+
+    redirect_to story_path(@story), notice: "経過記録を削除しました。"
+  end
+
   private
 
   def set_story
