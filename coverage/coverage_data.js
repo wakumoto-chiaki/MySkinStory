@@ -3,11 +3,11 @@ window.SIMPLECOV_DATA = {
   "meta": {
     "schema_version": "1.0",
     "simplecov_version": "1.0.2",
-    "command_name": "Integration Tests, Minitest",
+    "command_name": "Minitest",
     "project_name": "Myapp",
-    "timestamp": "2026-07-22T13:42:46.186+09:00",
+    "timestamp": "2026-07-22T18:16:21.386+09:00",
     "root": "/myapp",
-    "commit": "e0b3f75eec8449c635f54495d4fbcdd8591c3581",
+    "commit": "5fc5b2fd56fce5ae6f015369d46140f8bfbf048d",
     "primary_coverage": "line",
     "line_coverage": true,
     "branch_coverage": false,
@@ -15,12 +15,12 @@ window.SIMPLECOV_DATA = {
   },
   "total": {
     "lines": {
-      "covered": 43,
-      "missed": 51,
+      "covered": 37,
+      "missed": 57,
       "omitted": 84,
       "total": 94,
-      "percent": 45.744680851063826,
-      "strength": 0.8297872340425532
+      "percent": 39.361702127659576,
+      "strength": 0.39361702127659576
     }
   },
   "coverage": {
@@ -79,15 +79,15 @@ window.SIMPLECOV_DATA = {
         "end"
       ],
       "lines": [
-        2,
+        1,
         null,
-        2,
+        1,
         null,
-        2,
+        1,
         null,
-        2,
+        1,
         null,
-        2,
+        1,
         0,
         0,
         null,
@@ -243,7 +243,7 @@ window.SIMPLECOV_DATA = {
         "  end",
         "",
         "  def show",
-        "    @story = current_user.stories.find(params[:id])",
+        "    @story = current_user.stories.includes(:records).find(params[:id])",
         "",
         "    @before_record = @story.records.order(:recorded_on).first",
         "    @after_record  = @story.records.order(:recorded_on).last",
@@ -288,59 +288,59 @@ window.SIMPLECOV_DATA = {
         "end"
       ],
       "lines": [
-        2,
-        2,
+        1,
+        1,
         null,
-        2,
+        1,
         0,
         null,
         null,
-        2,
+        1,
         0,
         null,
         null,
-        2,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        2,
-        0,
-        null,
-        null,
-        2,
-        2,
-        null,
-        2,
-        2,
-        null,
-        0,
-        null,
-        null,
-        null,
-        2,
+        1,
         0,
         null,
         0,
         0,
         null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
         0,
         null,
         null,
         null,
-        2,
+        1,
+        0,
+        null,
         0,
         0,
         null,
         0,
         null,
         null,
-        2,
         null,
-        2,
-        2,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
         null,
         null
       ],
@@ -356,7 +356,7 @@ window.SIMPLECOV_DATA = {
         "end"
       ],
       "lines": [
-        2,
+        1,
         null
       ],
       "lines_covered_percent": 100.0,
@@ -371,7 +371,7 @@ window.SIMPLECOV_DATA = {
         "end"
       ],
       "lines": [
-        2,
+        1,
         null
       ],
       "lines_covered_percent": 100.0,
@@ -386,7 +386,7 @@ window.SIMPLECOV_DATA = {
         "end"
       ],
       "lines": [
-        2,
+        1,
         null
       ],
       "lines_covered_percent": 100.0,
@@ -401,7 +401,7 @@ window.SIMPLECOV_DATA = {
         "end"
       ],
       "lines": [
-        2,
+        1,
         null
       ],
       "lines_covered_percent": 100.0,
@@ -461,13 +461,13 @@ window.SIMPLECOV_DATA = {
         "end"
       ],
       "lines": [
-        1,
-        1,
+        0,
+        0,
         null
       ],
-      "lines_covered_percent": 100.0,
-      "covered_lines": 2,
-      "missed_lines": 0,
+      "lines_covered_percent": 0.0,
+      "covered_lines": 0,
+      "missed_lines": 2,
       "omitted_lines": 1,
       "total_lines": 2
     },
@@ -483,13 +483,13 @@ window.SIMPLECOV_DATA = {
         "end"
       ],
       "lines": [
-        2,
-        2,
+        1,
+        1,
         null,
-        2,
+        1,
         null,
-        2,
-        2,
+        1,
+        1,
         null
       ],
       "lines_covered_percent": 100.0,
@@ -513,14 +513,14 @@ window.SIMPLECOV_DATA = {
         "end"
       ],
       "lines": [
-        2,
-        2,
-        2,
+        1,
+        1,
+        1,
         null,
-        2,
-        2,
+        1,
+        1,
         null,
-        2,
+        1,
         0,
         null,
         null
@@ -542,17 +542,17 @@ window.SIMPLECOV_DATA = {
         "end"
       ],
       "lines": [
-        1,
-        1,
-        1,
+        0,
+        0,
+        0,
         null,
         null,
-        1,
+        0,
         null
       ],
-      "lines_covered_percent": 100.0,
-      "covered_lines": 4,
-      "missed_lines": 0,
+      "lines_covered_percent": 0.0,
+      "covered_lines": 0,
+      "missed_lines": 4,
       "omitted_lines": 3,
       "total_lines": 4
     }
@@ -565,7 +565,7 @@ window.SIMPLECOV_DATA = {
         "omitted": 58,
         "total": 64,
         "percent": 34.375,
-        "strength": 0.65625
+        "strength": 0.34375
       },
       "files": [
         "app/controllers/application_controller.rb",
@@ -590,12 +590,12 @@ window.SIMPLECOV_DATA = {
     },
     "Models": {
       "lines": {
-        "covered": 17,
-        "missed": 1,
+        "covered": 11,
+        "missed": 7,
         "omitted": 11,
         "total": 18,
-        "percent": 94.44444444444444,
-        "strength": 1.5555555555555556
+        "percent": 61.111111111111114,
+        "strength": 0.6111111111111112
       },
       "files": [
         "app/models/application_record.rb",
@@ -624,7 +624,7 @@ window.SIMPLECOV_DATA = {
         "omitted": 4,
         "total": 4,
         "percent": 100.0,
-        "strength": 2.0
+        "strength": 1.0
       },
       "files": [
         "app/helpers/application_helper.rb",
