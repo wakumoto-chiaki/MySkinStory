@@ -17,4 +17,4 @@ COPY . .
 
 RUN SECRET_KEY_BASE_DUMMY=1 RAILS_ENV=production bundle exec rails assets:precompile
 
-CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
+CMD ["bash", "-c", "bundle exec rails db:migrate && bundle exec rails server -b 0.0.0.0"]
