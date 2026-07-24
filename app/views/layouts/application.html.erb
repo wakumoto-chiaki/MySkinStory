@@ -4,6 +4,7 @@
     <title><%= content_for(:title) || "My Skin Story" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,12 +14,54 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
+
     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body class="bg-white text-gray-800 antialiased">
+
+    <header class="max-w-7xl mx-auto flex justify-between items-center px-6 py-6">
+
+      <%= link_to root_path,
+          class: "text-xl font-light tracking-wide text-rose-200 hover:text-rose-300 transition duration-300" do %>
+        My Skin Story
+      <% end %>
+
+      <% if user_signed_in? %>
+
+        <div class="flex items-center gap-6">
+
+          <%= link_to "My Stories",
+              stories_path,
+              class: "text-sm text-gray-500 hover:text-rose-300 transition duration-300" %>
+
+          <%= link_to current_user.name,
+              edit_user_registration_path,
+              class: "text-sm text-gray-500 hover:text-rose-300 transition duration-300" %>
+
+          <%= link_to "Logout",
+              destroy_user_session_path,
+              data: {
+                turbo_method: :delete,
+                turbo_confirm: "ログアウトしますか？"
+              },
+              class: "text-sm text-gray-500 hover:text-rose-300 transition duration-300" %>
+
+        </div>
+
+      <% else %>
+
+        <%= link_to "Login",
+            new_user_session_path,
+            class: "text-sm text-gray-500 hover:text-rose-300 transition duration-300" %>
+
+      <% end %>
+
+    </header>
+
     <%= yield %>
+
   </body>
 </html>
