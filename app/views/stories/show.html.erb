@@ -1,8 +1,29 @@
 <div class="max-w-3xl mx-auto px-6 py-12">
 
-  <h1 class="text-4xl font-extralight text-gray-700">
-    <%= @story.title %>
-  </h1>
+  <div class="flex items-center justify-between gap-4">
+
+    <h1 class="text-4xl font-extralight text-gray-700">
+      <%= @story.title %>
+    </h1>
+
+    <div class="flex gap-3">
+
+      <%= link_to "ストーリーを編集",
+          edit_story_path(@story),
+          class: "bg-rose-300 hover:bg-rose-400 text-white px-5 py-2 rounded-full transition duration-300 text-sm whitespace-nowrap" %>
+
+      <%= button_to "ストーリーを削除",
+          story_path(@story),
+          method: :delete,
+          class: "bg-gray-300 hover:bg-gray-400 text-white px-5 py-2 rounded-full transition duration-300 text-sm whitespace-nowrap",
+          data: {
+            turbo_confirm: "本当にこのストーリーを削除しますか？"
+          } %>
+
+    </div>
+
+  </div>
+
 
   <p class="mt-6 text-gray-500 leading-8">
     <%= @story.description %>
@@ -18,7 +39,9 @@
     </p>
   </div>
 
+
   <div class="mt-12">
+
     <h2 class="text-2xl font-light text-gray-700 mb-6">
       Before / After
     </h2>
@@ -26,6 +49,7 @@
     <div class="grid grid-cols-2 gap-6">
 
       <div class="border border-gray-200 rounded-2xl p-4">
+
         <p class="text-xs tracking-widest uppercase text-rose-300 mb-3">
           Before
         </p>
@@ -44,9 +68,12 @@
             <%= @before_record.recorded_on %>
           </p>
         <% end %>
+
       </div>
 
+
       <div class="border border-gray-200 rounded-2xl p-4">
+
         <p class="text-xs tracking-widest uppercase text-rose-300 mb-3">
           After
         </p>
@@ -65,20 +92,26 @@
             <%= @after_record.recorded_on %>
           </p>
         <% end %>
+
       </div>
 
     </div>
+
   </div>
 
+
   <hr class="my-12 border-gray-200">
+
 
   <h2 class="text-2xl font-light text-gray-700">
     経過記録
   </h2>
 
+
   <%= link_to "＋ 経過記録を追加",
       new_story_record_path(@story),
       class: "inline-block mt-6 bg-rose-300 hover:bg-rose-400 text-white px-6 py-3 rounded-full transition duration-300" %>
+
 
   <% if @story.records.any? %>
 
@@ -99,11 +132,13 @@
           <%= record.memo %>
         </p>
 
+
         <div class="mt-4">
+
           <%= link_to "編集",
               edit_story_record_path(@story, record),
               class: "text-sm text-rose-400 hover:text-rose-500 transition duration-300" %>
-        
+
           <%= button_to "削除",
               story_record_path(@story, record),
               method: :delete,
@@ -111,11 +146,9 @@
               class: "text-sm text-gray-400 hover:text-red-500 transition duration-300",
               data: {
                 turbo_confirm: "この経過記録を削除しますか？"
-             } %>
-        
-        
-        </div>
+              } %>
 
+        </div>
 
       </div>
 
@@ -129,17 +162,4 @@
 
   <% end %>
 
-  <%= link_to "編集する",
-      edit_story_path(@story),
-      class: "inline-block mt-8 bg-rose-300 hover:bg-rose-400 text-white px-6 py-3 rounded-full transition duration-300" %>
-
-  <%= button_to "削除する",
-      story_path(@story),
-      method: :delete,
-      form_class: "inline-block",
-      class: "bg-gray-300 hover:bg-gray-400 text-white px-6 py-3 rounded-full transition duration-300",
-      data: {
-        turbo_confirm: "本当にこのストーリーを削除しますか？"
-      } %>
-       
 </div>
