@@ -115,12 +115,14 @@ Rails.application.configure do
 
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
-    port: 465,
+    port: 587,
     domain: "gmail.com",
     user_name: ENV["MAILER_USERNAME"],
     password: ENV["MAILER_PASSWORD"],
     authentication: :plain,
-    ssl: true
+    enable_starttls_auto: true,
+    open_timeout: 10,
+    read_timeout: 10
   }
 
   config.action_mailer.raise_delivery_errors = true
