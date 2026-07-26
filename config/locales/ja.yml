@@ -23,9 +23,17 @@ ja:
         memo: メモ
         image: 写真
 
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              not_found: "入力されたメールアドレスが見つかりません"
+
   errors:
     messages:
       not_saved:
         one: "入力内容にエラーがあります。"
         other: "%{count}件のエラーがあります。"
-        
+      not_found: "入力されたメールアドレスが見つかりません"
+      
