@@ -1,0 +1,31 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      story: ストーリー
+      record: 経過記録
+
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+        current_password: 現在のパスワード
+
+      story:
+        title: タイトル
+        description: 説明
+        started_on: 開始日
+
+      record:
+        recorded_on: 記録日
+        memo: メモ
+        image: 写真
+
+  errors:
+    messages:
+      not_saved:
+        one: "入力内容にエラーがあります。"
+        other: "%{count}件のエラーがあります。"
+        

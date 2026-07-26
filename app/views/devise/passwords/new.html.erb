@@ -3,7 +3,7 @@
   <div class="w-full max-w-md">
 
     <h2 class="text-2xl font-light text-gray-800 text-center mb-10">
-      Reset password
+      パスワード再設定
     </h2>
 
     <p class="text-sm text-gray-500 text-center mb-8 leading-relaxed">
@@ -21,7 +21,9 @@
       <div class="mb-6">
 
         <%= f.label :email,
-          class: "block text-sm text-gray-600 mb-2" %>
+          class: "block text-sm text-gray-600 mb-2" do %>
+          メールアドレス <span class="text-red-500">*</span>
+        <% end %>
 
         <%= f.email_field :email,
           autofocus: true,
@@ -30,16 +32,14 @@
 
       </div>
 
-
       <div class="actions">
 
-        <%= f.submit "Send reset instructions",
+        <%= f.submit "再設定メールを送信",
           class: "w-full bg-rose-200 hover:bg-rose-300 text-white rounded-full py-3 text-sm transition duration-300 cursor-pointer" %>
 
       </div>
 
     <% end %>
-
 
     <div class="mt-8 text-center text-sm">
       <%= render "devise/shared/links" %>

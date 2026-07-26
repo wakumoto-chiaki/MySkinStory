@@ -61,3 +61,5 @@ group :test do
   gem "selenium-webdriver"
   gem "simplecov", require: false
 end
+
+gem "rails-i18n"
