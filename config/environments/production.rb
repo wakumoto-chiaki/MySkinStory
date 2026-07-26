@@ -115,11 +115,10 @@ Rails.application.configure do
 
   config.action_mailer.smtp_settings = {
     address: "smtp.resend.com",
-    port: 587,
-    domain: "resend.com",
+    port: 465,
     user_name: "resend",
-    password: ENV["RESEND_API_KEY"],
-    authentication: "plain",
+    password: ENV.fetch("RESEND_API_KEY"),
+    authentication: :plain,
     enable_starttls_auto: true
   }
 
