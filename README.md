@@ -240,3 +240,5 @@ demo_user_2026@myskinstory.example
 
 パスワード：
 SkinStory2026!
+
+※現在はResend無料プランを利用しているため、パスワード再設定メールは検証用メールアドレス宛のみ送信可能です。
