@@ -60,6 +60,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "simplecov", require: false
+  gem "rspec-rails"
 end
 
 gem "rails-i18n"
